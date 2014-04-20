@@ -1,624 +1,680 @@
-Especificación de 
-requisitos software 
-VIRUTA 24 de julio de 2009 
- 
- 
- 
- 
- 
- Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
- 
 Tabla de contenido 
-1. Introducción ....................................................................................................................................... 6 
-1.1. Propósito ..................................................................................................................................... 6 
-1.2. Ámbito ......................................................................................................................................... 6 
-1.3. Definiciones, acrónimos y abreviaturas ...................................................................................... 7 
- ERS: ......................................................................................................................................... 7 
- TRANSFER: .............................................................................................................................. 7 
- VIRUTA: .................................................................................................................................. 7 
- Revisor: ................................................................................................................................... 7 
- Trayecto: ................................................................................................................................ 7 
- Billete: .................................................................................................................................... 7 
- Tarifa: ..................................................................................................................................... 7 
- SC:........................................................................................................................................... 7 
- TPV: ........................................................................................................................................ 7 
- V-Ops: ..................................................................................................................................... 7 
- V-Trf: ...................................................................................................................................... 7 
- V-Usr:...................................................................................................................................... 7 
- V-Dsc: ..................................................................................................................................... 7 
-1.4. Referencias .................................................................................................................................. 7 
-1.5. Visión global ................................................................................................................................ 7 
-Descripción general: ....................................................................................................................... 7 
-Requisitos específicos: ................................................................................................................... 8 
-2. Descripción general ............................................................................................................................ 8 
-2.1. Perspectiva del producto ............................................................................................................ 8 
-MOTOROLA XLS 6000 ..................................................................................................................... 8 
-MOTOROLA XLS 9000 ..................................................................................................................... 8 
-2.2. Funciones del producto............................................................................................................... 9 
-1. Autenticación de usuarios. ......................................................................................................... 9 
-2. Venta de billetes. ....................................................................................................................... 9 
-3. Descarga de operaciones. .......................................................................................................... 9 
-4. Actualización del software. ........................................................................................................ 9 Especificación de Requisitos Software VIRUTA 
-9-9-2013 
+1. Introducción 
+..................................................................................................................................... 6 
+1.1. Propósito 
+................................................................................................................................... 6 
+1.2. Ámbito 
+....................................................................................................................................... 6 
+1.3. Definiciones, acrónimos y abreviaturas 
+...................................................................................... 7 
+ERS: ....................................................................................................................................... 7 
+TRANSFER: .............................................................................................................................. 
+7 
+VIRUTA: ................................................................................................................................ 7 
+Revisor: ................................................................................................................................. 7 
+Trayecto: ............................................................................................................................... 7 
+Billete: .................................................................................................................................. 7 
+Tarifa: ................................................................................................................................... 7 
+SC:......................................................................................................................................... 7 
+TPV: ...................................................................................................................................... 7 
+V-Ops: ................................................................................................................................... 7 
+V-Trf: .................................................................................................................................... 7 
+V-Usr:.................................................................................................................................... 7 
+V-Dsc: ................................................................................................................................... 7 
+1.4. Referencias 
+................................................................................................................................ 7 
+1.5. Visión global 
+............................................................................................................................... 7 
+Descripción general: ....................................................................................................................... 
+7 
+Requisitos específicos: ................................................................................................................... 
+8  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+1 
+2. Descripción general 
+............................................................................................................................ 8 
+2.1. Perspectiva del producto 
+............................................................................................................ 8 
+MOTOROLA XLS 6000 ..................................................................................................................... 
+8 
+MOTOROLA XLS 9000 ..................................................................................................................... 
+8 
+2.2. Funciones del 
+producto............................................................................................................... 9 
+1. Autenticación de usuarios. ......................................................................................................... 
+9 
+2. Venta de billetes. ....................................................................................................................... 
+9 
+3. Descarga de operaciones. .......................................................................................................... 
+9 
+4. Actualización del software. ........................................................................................................ 
+9 Especificación de Requisitos Software VIRUTA 9-9-2013 Práctica de Control de Cambios 
+Asignatura Evolución y Adaptación del Software Grado de Ingeniería del Software Curso 
+2013/2014  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+2 
+2.3. Características del usuario 
+.......................................................................................................... 9 
+2.4. Restricciones generales 
+............................................................................................................... 9 
+2.5 Suposiciones y dependencias 
+..................................................................................................... 10 
+2.6 Requisitos futuros 
+...................................................................................................................... 10 
+3. Requisitos específicos 
+...................................................................................................................... 10 
+3.1. Requisitos de interfaces externas 
+............................................................................................. 10 
+3.1.1. Interfaces de usuario ......................................................................................................... 
+10 
+3.1.2. Interfaces hardware ........................................................................................................... 
+11 
+3.1.3. Interfaces software ............................................................................................................ 
+11 
+3.1.4. Interfaces de comunicaciones ............................................................................................ 
+13 
+3.2. Requisitos funcionales 
+.............................................................................................................. 14 
+3.2.1 Autenticación de usuario .................................................................................................... 
+14 
+3.2.2 Venta de billetes ................................................................................................................. 
+14 
+3.2.3 Descarga de operaciones. ................................................................................................... 
+15 
+3.2.4 Actualización del sistema .................................................................................................... 
+16 
+3.3. Restricciones de rendimiento 
+................................................................................................... 17  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+3 
+3.4. Restricciones de diseño 
+............................................................................................................. 18 
+3.5 Atributos del sistema 
+................................................................................................................. 18 
+3.5.1 Seguridad ............................................................................................................................ 
+18 
+3.5.2 Portabilidad ......................................................................................................................... 
+18 
+3.5.3 Fiabilidad ............................................................................................................................. 
+18 
+3.6 Requisitos de base de datos lógica. 
+........................................................................................... 18 Especificación de Requisitos 
+Software VIRUTA 9-9-2013 Práctica de Control de Cambios Asignatura Evolución y Adaptación 
+del Software Grado de Ingeniería del Software Curso 2013/2014 
  
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
-2.3. Características del usuario .......................................................................................................... 9 
-2.4. Restricciones generales ............................................................................................................... 9 
-2.5 Suposiciones y dependencias ..................................................................................................... 10 
-2.6 Requisitos futuros ...................................................................................................................... 10 
-3. Requisitos específicos ...................................................................................................................... 10 
-3.1. Requisitos de interfaces externas ............................................................................................. 10 
-3.1.1. Interfaces de usuario ......................................................................................................... 10 
-3.1.2. Interfaces hardware ........................................................................................................... 11 
-3.1.3. Interfaces software ............................................................................................................ 11 
-3.1.4. Interfaces de comunicaciones ............................................................................................ 13 
-3.2. Requisitos funcionales .............................................................................................................. 14 
-3.2.1 Autenticación de usuario .................................................................................................... 14 
-3.2.2 Venta de billetes ................................................................................................................. 14 
-3.2.3 Descarga de operaciones. ................................................................................................... 15 
-3.2.4 Actualización del sistema .................................................................................................... 16 
-3.3. Restricciones de rendimiento ................................................................................................... 17 
-3.4. Restricciones de diseño ............................................................................................................. 18 
-3.5 Atributos del sistema ................................................................................................................. 18 
-3.5.1 Seguridad ............................................................................................................................ 18 
-3.5.2 Portabilidad ......................................................................................................................... 18 
-3.5.3 Fiabilidad ............................................................................................................................. 18 
-3.6 Requisitos de base de datos lógica. ........................................................................................... 18 
-  Especificación de Requisitos Software VIRUTA 
-9-9-2013 
  
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
 1. Introducción 
 1.1. Propósito 
-El objetivo de la especificación de requisitos software (ERS) es describir de forma concisa los 
-servicios y restricciones de nuestro sistema software. La ERS establece una base de acuerdo o 
-contrato entre la empresa de transporte TRASNFER y la empresa proveedora del servicio 
-informático, APPCOM. Este documento proporciona una guía de la estructura y funcionalidad del 
-sistema. 
- 
-Nótese que este documento no contendrá referencia alguna a detalles concretos sobre la 
-implementación de dicho software informático. 
+El objetivo de la especificación de requisitos software (ERS) es describir de 
+forma concisa los servicios y restricciones de nuestro sistema software VIRUTA2, el 
+cual es una modificación de VIRUTA. La ERS establece una base de acuerdo o contrato 
+entre la empresa de transporte TRASNFER y la empresa proveedora del servicio 
+informático, APPCOM. Este documento proporciona una guía de la estructura y 
+funcionalidad del sistema. 
+Nótese que este documento no contendrá referencia alguna a detalles 
+concretos sobre la implementación de dicho software informático. 
 1.2. Ámbito 
-El sistema informático a desarrollar, al que de ahora en adelante llamaremos VIRUTA, tendrá como 
-propósito la venta automatizada de billetes de tren en la red de Cercanías. VIRUTA permitirá al 
-personal revisor de TRANSFER efectuar la venta e impresión de billetes no numerados directamente 
-en el tren, ahorrando al viajero la necesidad de pasar por la taquilla. 
-Dicha venta de billetes será sujeto de aplicación de los distintos descuentos y tarifas que TRANSFER 
-considere oportunos. 
- 
-VIRUTA deberá interactuar con el servidor central de TRANSFER para actualizar rutas, horarios, 
-tarifas y descuentos, y para descargar todas las operaciones realizadas, que habrán quedado 
-asociadas al empleado de TRANSFER que las llevó a cabo. 
- 
-Por el contrario, VIRUTA no tendrá capacidad de conexión inalámbrica, por lo que por ejemplo, no 
-aceptará pagos con tarjeta (estos serán exclusivamente en efectivo), ni dispondrá de 
-actualizaciones automáticas del sistema. 
- 
-VIRUTA correrá en terminales de punto de venta modelo MOTOROLA XLS 6000 que serán propiedad 
-de TRANSFER. En un plazo de no menos de 2 años, dichos terminales habrán sido progresivamente 
-remplazados por el modelo superior XLS 9000. Dichos terminales podrán ser usados 
-indistintamente por cualquier empleado de TRANSFER que sea responsable de llevar a cabo las 
-ventas. 
- 
-Por último, VIRUTA no deberá ser capaz de tramitar multas a los pasajeros, quedando esta 
-funcionalidad restringida a los procedimientos actuales definidos por TRANSFER para la misma. 
- 
-VIRUTA supondrá evidentes ventajas y ahorro de costes tanto para TRANSFER como para sus 
-clientes. 
- 
-1) Permitirá a TRANSFER reducir los recursos destinados a venta en taquilla. Por ejemplo, ya no 
-será necesario disponer de personal de taquilla en aquellas localidades con escaso tránsito 
-de pasajeros. 
-2) Permitirá a TRANSFER un seguimiento automatizado de los volúmenes de ventas y 
-pasajeros. 
-3) Permitirá a los clientes de TRANSFER un ahorro en tiempo y una ganancia en comodidad al 
-poder pagar sus trayectos directamente en el tren. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
-1.3. Definiciones, acrónimos y abreviaturas 
- ERS: Especificación de requisitos software, el presente documento. 
- TRANSFER: Transportes Ferroviarios. Empresa encargada de la explotación de los trenes 
-de cercanías. 
- VIRUTA: Venta de billetes en ruta. La aplicación a desarrollar mediante la presente ERS. 
- Revisor: Personal de TRANSFER encargado de la venta y comprobación de los billetes en 
-las rutas explotadas por TRANSFER. 
- Trayecto: Viaje entre dos nodos de la red de TRANSFER. 
- Billete: Documento que certifica el derecho de un cliente a realizar un trayecto en la red 
-de TRANSFER. Viene definido por dicho trayecto, la fecha y hora, y la tarifa y descuento 
-aplicados al mismo. 
- Tarifa: Precio asignado por TRANSFER a un trayecto. 
- SC: Sistema Central informático de TRANSFER 
- TPV: Terminal de punto de venta. 
- V-Ops: VIRUTA operaciones. Nombre del formato usado para transmitir las operaciones 
-realizadas a lo largo del día del TPV al SC. 
- V-Trf: VIRUTA tarifas. Nombre del formato usado para transmitir la información de tarifas 
-del SC al TPV. 
- V-Usr: VIRUTA usuarios. Nombre del formato usado para transmitir la información de 
-usuarios del SC al TPV. 
- V-Dsc: VIRUTA descuentos. Nombre del formato usado para transmitir la información de 
-descuentos del SC al TPV. 
+El sistema informático a desarrollar, al que de ahora en adelante llamaremos 
+VIRUTA2, tendrá como propósito la venta automatizada de billetes de tren en la red de  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+4 
+Cercanías. VIRUTA permitirá al personal revisor de TRANSFER efectuar la venta e 
+impresión de billetes no numerados directamente en el tren, ahorrando al viajero la 
+necesidad de pasar por la taquilla. 
+Dicha venta de billetes será sujeto de aplicación de los distintos descuentos y 
+tarifas que TRANSFER considere oportunos. 
+VIRUTA deberá interactuar con el servidor central de TRANSFER para actualizar 
+rutas, horarios, tarifas y descuentos, y para descargar todas las operaciones realizadas, 
+que habrán quedado asociadas al empleado de TRANSFER que las llevó a cabo. 
+Al contrario que el sistema anterior, VIRUTA2 tendrá capacidad de conexión 
+inalámbrica, aceptará pagos con tarjeta y dispondrá de actualizaciones automáticas del 
+sistema. 
+VIRUTA2 correrá en smart devices tipo IPad, debido a su uso intuitivo. Estos 
+dispositivos serán facilitados por parte de la empresa a sus trabajadores. Cada 
+dispositivo será único de cada empleado, siendo utilizado únicamente con fines 
+laborales, no ociosos ni personales. 
+Por último, VIRUTA2 no deberá ser capaz de tramitar multas a los pasajeros, 
+quedando esta funcionalidad restringida a los procedimientos actuales definidos por 
+TRANSFER para la misma. 
+VIRUTA2 supondrá evidentes ventajas y ahorro de costes tanto para TRANSFER 
+como para sus clientes y además las mejoras realizadas respecto a VIRUTA permitirán 
+un mejor control de los revisores del sistema, ya que el sistema es más independiente 
+e intuitivo. 
+1) Permitirá a TRANSFER reducir los recursos destinados a venta en 
+taquilla. Por ejemplo, ya no será necesario disponer de personal de taquilla en 
+aquellas localidades con escaso tránsito de pasajeros. 
+2) Permitirá a TRANSFER un seguimiento automatizado de los volúmenes 
+de ventas y pasajeros. 
+3) Permitirá a los clientes de TRANSFER un ahorro en tiempo y una 
+ganancia en comodidad al poder pagar sus trayectos directamente en el tren. 
+1.3. Definiciones, acrónimos y abreviaturas  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+5 
+ ERS: Especificación de requisitos software, el presente documento. 
+ TRANSFER: Transportes Ferroviarios. Empresa encargada de la 
+explotación de los trenes de cercanías. 
+ VIRUTA2: Venta de billetes en ruta. La aplicación a desarrollar mediante 
+la presente ERS. 
+ VIRUTA: Anterior aplicación de venta de billetes en ruta. 
+ Revisor: Personal de TRANSFER encargado de la venta y comprobación 
+de los billetes en las rutas explotadas por TRANSFER. 
+ Trayecto: Viaje entre dos nodos de la red de TRANSFER. 
+ Billete: Documento que certifica el derecho de un cliente a realizar un 
+trayecto en la red de TRANSFER. Viene definido por dicho trayecto, la fecha y 
+hora, y la tarifa y descuento aplicados al mismo. 
+ Tarifa: Precio asignado por TRANSFER a un trayecto. 
+ SC: Sistema Central informático de TRANSFER. 
+ TPV: Terminal de punto de venta. 
+ V-Ops: VIRUTA operaciones. Nombre del formato usado para transmitir 
+las operaciones realizadas a lo largo del día del TPV al SC. 
+ V-Trf: VIRUTA tarifas. Nombre del formato usado para transmitir la 
+información de tarifas del SC al TPV. 
+ V-Usr: VIRUTA usuarios. Nombre del formato usado para transmitir la 
+información de usuarios del SC al TPV. 
+ V-Dsc: VIRUTA descuentos. Nombre del formato usado para transmitir 
+la información de descuentos del SC al TPV. 
 1.4. Referencias 
-Como referencia se ha usado la siguiente página la guía del Std. 830 del IEEE para la especificación 
-de requisitos Software, así como los apuntes del tema 10 del Máster de Gestión y Dirección de 
-Proyectos Software. 
+Como referencia se ha usado la siguiente página la guía del Std. 830 del IEEE 
+para la especificación de requisitos Software, así como los apuntes del tema 10 del 
+Máster de Gestión y Dirección de Proyectos Software. 
 1.5. Visión global 
-El resto de la ERS está organizada siguiendo el siguiente esquema: 
- 
-Descripción general: describe los factores generales que afectan al producto y sus requisitos. 
- 
- 2.1 Perspectiva del producto: establece el contexto de implantación del producto y el uso 
-del interfaz del sistema, interfaces de usuario, hardware, interfaces de comunicación, etc. 
- 2.2 Funciones del producto: describe las funciones principales del software. 
- 2.3 Características de usuario: describe el nivel educativo, experiencia y capacidad del 
-usuario. 
- 2.4 Restricciones: Políticas de regulación, limitaciones hardware e interfaces con otras 
-aplicaciones, operaciones en paralelo, funciones de auditoria y de control, requisitos de 
-fiabilidad, etc. 
- 2.5 Supuestos y dependencias: Identifica los factores que afectan a los requisitos de la SRS. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
- 2.6 Requisitos futuros: indicará los requisitos que se incluirán en versiones futuras del 
+El resto de la ERS está organizada siguiendo el siguiente esquema:  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+6 
+Descripción general: describe los factores generales que afectan al producto y 
+sus requisitos. 
+ 2.1. Perspectiva del producto: establece el contexto de implantación del 
+producto y el uso del interfaz del sistema, interfaces de usuario, hardware, 
+interfaces de comunicación, etc. 
+ 2.2. Funciones del producto: describe las funciones principales del 
 software. 
- 
-Requisitos específicos: Contienen todos los requisitos del sistema, con nivel de detalle mayor 
-que el apartado anterior. Constituye la base del diseño que posteriormente será implementado. 
- 
- 3.1 Interfaces: descripción detallada de todas las entradas y salidas del sistema software. 
- 3.2 Funciones: define las acciones fundamentales que tendrán lugar en el software durante 
-la aceptación y procesamiento de la entrada y durante el procesamiento y generación de la 
-salida. 
- 3.3 Requisitos de Rendimiento: requisitos numéricos estáticos y dinámicos del rendimiento 
-del sistema. 
- 3.4 Requisitos de la Base de datos lógica: Requisitos lógicos de la información que residirá 
-en la base de datos. 
- 3.5 Restricciones de Diseño: Restricciones impuestas al diseño por adecuación a otros 
-estándares, limitaciones hardware, etc. 
- 3.6 Atributos del sistema software: Características del sistema software no funcionales. Aquí 
-se evalúan conceptos como fiabilidad, robustez, velocidad, etc. 
+ 2.3. Características de usuario: describe el nivel educativo, experiencia y 
+capacidad del usuario. 
+ 2.4. Restricciones: Políticas de regulación, limitaciones hardware e 
+interfaces con otras aplicaciones, operaciones en paralelo, funciones de 
+auditoría y de control, requisitos de fiabilidad, etc. 
+ 2.5. Supuestos y dependencias: Identifica los factores que afectan a los 
+requisitos de la SRS. 
+ 2.6. Requisitos futuros: indicará los requisitos que se incluirán en 
+versiones futuras del software. 
+Requisitos específicos: Contienen todos los requisitos del sistema, con nivel de 
+detalle mayor que el apartado anterior. Constituye la base del diseño que 
+posteriormente será implementado. 
+ 3.1. Interfaces: descripción detallada de todas las entradas y salidas del 
+sistema software. 
+ 3.2. Funciones: define las acciones fundamentales que tendrán lugar en 
+el software durante la aceptación y procesamiento de la entrada y durante el 
+procesamiento y generación de la salida. 
+ 3.3. Requisitos de Rendimiento: requisitos numéricos estáticos y 
+dinámicos del rendimiento del sistema. 
+ 3.4. Requisitos de la Base de datos lógica: Requisitos lógicos de la 
+información que residirá en la base de datos. 
+ 3.5. Restricciones de Diseño: Restricciones impuestas al diseño por 
+adecuación a otros estándares, limitaciones hardware, etc.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+7 
+ 3.6. Atributos del sistema software: Características del sistema software 
+no funcionales. Aquí se evalúan conceptos como fiabilidad, robustez, velocidad, 
+etc. 
 2. Descripción general 
 2.1. Perspectiva del producto 
-VIRUTA debe ser implantado en un entorno de explotación específico y dependiente de otros 
-sistemas ya existentes. Como ya se ha enunciado anteriormente, la aplicación deberá correr en 
-terminales MOTOROLA XLS 6000 que se irán remplazando progresivamente por el modelo superior 
-XLS 9000 dentro de un plazo de dos años. 
- 
-Estos TPVs tienen las siguientes especificaciones técnicas: 
-MOTOROLA XLS 6000 
- 16 MB memoria RAM 
- 1 GIGA memoria Flash 
- Procesador ARM7 TMI con frecuencia máxima de 250 Mhz. 
- Bateria ION-LI de 1000mAh (72 horas reales de uso). 
- 1 Puerto micro USB 
- 1 Impresora de tinta incluida. 
- Teclado analógico. 
- Pantalla de 200*400 
-MOTOROLA XLS 9000 
- 128 MB memoria RAM 
- 2 GIGA memoria Flash 
- Procesador ARM9 TMI con frecuencia máxima de 800 Mhz. 
- Bateria ION-LI de 2000mAh (72 horas reales de uso). 
- 1 puerto micro USB 3.0 Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
- 1 impresora de tinta a color. 
- 1 tarjeta de red 3G. 
- Teclado analógico ergonómico. 
- Pantalla a color de 200*400 
- 
-Como se puede observar a tenor de las especificaciones técnicas de los TPVs, VIRUTA deberá poder 
-ser ejecutado bajo unos recursos limitados. Esto fuerza a Viruta a ceñirse a unas características 
-arquitectónicas que serán descritas en la sección 3.5 de este documento. 
-Además, el software deberá interacturar con el sistema central (SC) de TRANSFER para la descarga 
-de las operaciones de venta efectuadas. Este proceso se llevará a cabo mediante conexión física 
-entre los TPVs y el SC por puerto USB, es decir, no habrá capacidad de conexión inalámbrica. 
-El sistema no deberá interactuar con el tren ni con ninguno de los sistemas que pudiera haber en él. 
-Los requisitos concretos para los interfaces del sistema serán enunciados en la sección 3 de este 
-documento. 
+VIRUTA2 va a ser implantado en un entorno de explotación específico. Como ya 
+se ha enunciado anteriormente, la aplicación correrá en smart devices tipo IPad que 
+serán facilitados por parte de la empresa. 
+El software deberá interactuar con el sistema central (SC) de TRANSFER para la 
+descarga de las operaciones de venta efectuadas. Este proceso se llevará a cabo 
+mediante conexión inalámbrica entre los smart devices y el SC por medio de Wi-Fi. 
+El sistema no deberá interactuar con el tren ni con ninguno de los sistemas que 
+pudiera haber en él. 
+Los requisitos concretos para los interfaces del sistema serán enunciados en la 
+sección 3 de este documento. 
 2.2. Funciones del producto 
-La funcionalidad del sistema puede descomponerse conceptualmente en los siguientes módulos: 
+La funcionalidad del sistema puede descomponerse conceptualmente en los 
+siguientes módulos: 
 1. Autenticación de usuarios. 
 1.1 Autenticación del usuario. 
 2. Venta de billetes. 
 2.1 Venta del billete. 
-2.2 Impresión del billete. 
-2.3 Impresión del justificante de compra. 
-3. Descarga de operaciones. 
+2.2 Pago con tarjeta: introducción de datos. 
+2.3 Pago con tarjeta: envío de datos. 
+2.4 Impresión del billete. 
+2.5 Impresión del justificante de compra. 
+3. Descarga de operaciones.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+8 
 3.1 Generación del archivo intermedio de operaciones. 
-4. Actualización del software. 
+///4. Actualización del software. 
 4.1 Actualización de tarifas. 
 4.2 Actualización de descuentos. 
 4.3 Actualización de la red ferroviaria. 
-4.4 Actualización de usuarios. 
+4.4 Actualización de usuarios. /// 
 2.3. Características del usuario 
-El usuario estándar de VIRUTA será un revisor de TRANSFER. Los revisores de TRANSFER son 
-personas de avanzada edad con poca exposición a la tecnología. Además, es posible que sufran 
-problemas de visión. 
+El usuario estándar de VIRUTA2 será un revisor de TRANSFER. Los revisores de 
+TRANSFER son personas de avanzada edad con poca exposición a la tecnología. 
+Además, es posible que sufran problemas de visión. 
 2.4. Restricciones generales 
-El sistema tendrá unas mínimas garantías de seguridad. Solo podrá ser operado mediante previa 
-autentificación del usuario en el sistema. Esta autenticación se realizará mediante el uso de un 
-nombre de usuario y contraseña: 
- 
-Nombre de usuario: Mínimo 4 caracteres alfanuméricos. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
-Contraseña: Mínimo 8 caracteres, incluyendo mayúsculas, minúsculas, números y al menos un 
-carácter especial. 
+El sistema tendrá unas mínimas garantías de seguridad. Solo podrá ser operado 
+mediante previa autentificación del usuario en el sistema. Esta autenticación se 
+realizará mediante el uso de un nombre de usuario y contraseña: 
+Nombre de usuario: Mínimo 4 caracteres alfanuméricos. 
+Contraseña: Mínimo 8 caracteres, incluyendo mayúsculas, minúsculas, 
+números y al menos un carácter especial. 
 2.5 Suposiciones y dependencias 
-El presente documento se ha realizado con la información disponible en la fecha del mismo. Dada la 
-volatilidad esperada de alguno de los requisitos enunciados, este documento queda sujeto a 
-posibles actualizaciones. 
+El presente documento se ha realizado con la información disponible en la 
+fecha del mismo. Dada la volatilidad esperada de alguno de los requisitos enunciados, 
+este documento queda sujeto a posibles actualizaciones. 
 2.6 Requisitos futuros 
-Es posible que el sistema evolucione en un futuro de tal forma que VIRUTA pueda interactuar con el 
-directorio ligero de usuarios de TRANSFER, con el objetivo de unificar la gestión de usuarios de todos 
-los sistemas de la compañía ferroviaria. 
-También es posible que el sistema evolucione en un futuro para obtener ventaja de la tarjeta de red 
-3G de los dispositivos MOTOROLA XSL 9000 que irán remplazando paulatinamente a los actuales XSL 
-6000. 
-3. Requisitos específicos 
+Es posible que el sistema evolucione en un futuro de tal forma que VIRUTA 
+pueda interactuar con el directorio ligero de usuarios de TRANSFER, con el objetivo de 
+unificar la gestión de usuarios de todos los sistemas de la compañía ferroviaria. 
+3. Requisitos específicos  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+9 
 3.1. Requisitos de interfaces externas 
 3.1.1. Interfaces de usuario 
-El usuario interactuará con el TPV por medio del teclado integrado en el mismo. El sistema deberá 
-de ofrecer al menos una interfaz gráfica externa al revisor por cada una de las funcionalidades 
-descritas en la sección 2.2 de este documento: 
- 
-1.- Autenticación de usuario: El usuario deberá ser capaz de introducir su nombre de usuario y 
-contraseña. El usuario deberá recibir un mensaje de error en caso de que la autenticación no haya 
-sido exitosa. 
- 
-Una vez autenticado, la interacción del usuario con el TPV puede ser reducida a dos posibles 
-escenarios: 
- 
-a) El terminal no está conectado al SC. 
- 
-2.- Venta de billetes: El usuario deberá ser capaz de seleccionar los nodos del trayecto de 
-una lista y de elegir un posible descuento. También deberá ser capaz de ver un resumen de 
-los datos del billete (trayecto, tarifa, descuento, fecha y hora) antes de confirmar la compra. 
-El usuario deberá recibir un mensaje confirmando que la operación se ha llevado a cabo 
-satisfactoriamente. 
- 
-b) El terminal está conectado al SC 
- 
-3.- Descarga de operaciones: El usuario deberá ser notificado por pantalla de que la 
-descarga de operaciones es posible (tras conectar el TPV al SC), así como deberá recibir un 
-mensaje de confirmación o error tras la finalización de la operación. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
- 
-4.- Actualizar sistema: El usuario deberá ser notificado de que la actualización del sistema es 
-posible (tras conectar el TPV al SC), así como deberá recibir un mensaje de confirmación o 
-error tras la finalización de la operación. 
- 
-Nótese que una vez autenticado el usuario en VIRUTA, el terminal de punto de venta no conectado 
-al SC no deberá permitir otra opción que no sea la venta de billetes. De esta forma, se espera agilizar 
-la venta de los mismos al reducir el número de interacciones entre revisor y dispositivo. 
- 
-Del mismo modo, el sistema deberá tener en cuenta las características del terminal de punto de 
-venta, descritas en la sección 2.1, así como las características de usuario definidas en la sección 2.3 
-de este documento. 
- 
-Todas las interfaces gráficas deberán seguir las pautas de imagen corporativa de TRANSFER. 
- 
-Por último, todas las interfaces del usuario, tanto gráficas (opciones en pantalla) como analógicas 
-(teclado del terminal) deberán ofrecer la posibilidad de cancelar la operación en curso. 
+El usuario interactuará con el IPad por medio del teclado integrado en el 
+mismo. El sistema deberá de ofrecer al menos una interfaz gráfica externa al 
+revisor para las funcionalidades 1 y 2 descritas en la sección 2.2 de este 
+documento, las funcionalidades 3 y 4 se realizarán automáticamente: 
+1.- Autenticación de usuario: El usuario deberá ser capaz de introducir 
+su nombre de usuario y contraseña. El usuario deberá recibir un mensaje de 
+error en caso de que la autenticación no haya sido exitosa. 
+2.- Venta de billetes: El usuario deberá ser capaz de seleccionar los 
+nodos del trayecto de una lista y de elegir un posible descuento. También 
+deberá ser capaz de ver un resumen de los datos del billete (trayecto, tarifa, 
+descuento, fecha y hora) antes de confirmar la compra. El usuario deberá 
+recibir un mensaje confirmando que la operación se ha llevado a cabo 
+satisfactoriamente. Además el sistema deberá permitir al usuario realizar el 
+cobro del billete con tarjeta de crédito, conectando con el servicio de cobros de 
+la correspondiente tarjeta (MasterCard, VISA, etc.). 
+Todas las interfaces gráficas deberán seguir las pautas de imagen 
+corporativa de TRANSFER y las normas de estilo y diseño proporcionadas por 
+Apple para el desarrollo de aplicaciones en sus dispositivos. 
+Por último, todas las interfaces del usuario deberán ofrecer la 
+posibilidad de cancelar la operación en curso. 
 3.1.2. Interfaces hardware 
-VIRUTA deberá correr en terminales de punto de venta MOTOROLA XSL 6000 y XLS 9000. Las 
-especificaciones técnicas de estos dispositivos pueden encontrarse en la sección 2.1 de este 
-documento. Nótese que dicho dispositivo ya integra una impresora. 
-El sistema también deberá conectarse de forma física con el SC o alguno de sus nodos. Dicho 
-sistema central corre en un servidor UNIX en las oficinas centrales de TRANSFER. Los distintos nodos 
-de dicho sistema central serán clientes pesados instalados en los PCs de las dependencias de 
-TRANSFER. Dichos PCs correrán una distribución estándar de Linux adaptada gráficamente a la 
-imagen corporativa de TRANSFER. 
-La conexión será realizada mediante puerto USB, lo cual permitirá la transferencia de ficheros entra 
-las memorias del dispositivo y las máquinas de TRANSFER. 
- Por último, nótese que los TPVs no requerirán interacción alguna con los trenes de TRANSFER ni con 
-ninguno de los sistemas de los mismos. 
+VIRUTA2 deberá correr en smart devices tipo IPad. Nótese que dicho 
+dispositivo no posee impresora integrada, por lo que será necesario utilizar una 
+para la impresión de billetes y resguardos. Además será necesario un lector de 
+tarjetas para permitir el cobro con las mismas.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+10 
+El sistema también deberá conectarse de forma inalámbrica con el SC. 
+Dicho sistema central corre en un servidor UNIX en las oficinas centrales de 
+TRANSFER. 
+La conexión será realizada mediante Wi-Fi, lo cual permitirá la 
+transferencia de ficheros entra las memorias del dispositivo y el servidor de 
+TRANSFER. 
+Por último, nótese que los smart devices no requerirán interacción 
+alguna con los trenes de TRANSFER ni con ninguno de los sistemas de los 
+mismos. 
 3.1.3. Interfaces software 
-Como se ha establecido previamente en la presente especificación de requisitos software, VIRUTA 
-deberá interactuar con el SC de TRANSFER para llevar a cabo las funcionalidades de descarga de 
-operaciones y actualización del sistema. 
+Como se ha establecido previamente en la presente especificación de 
+requisitos software, VIRUTA2 deberá interactuar con el SC de TRANSFER para 
+llevar a cabo las funcionalidades de descarga de operaciones y actualización del 
+sistema. 
 3.1.3.1 Interfaz de operaciones 
-La descarga de operaciones se llevará a cabo mediante la generación de un archivo intermedio XML 
-que posteriormente será transmitido del punto de venta al SC. Este archivo incluirá la siguiente 
-información: 
- Fecha de la extracción. 
- Usuario que la ha realizado. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
- Número de operaciones realizadas. 
- Terminal de punto de venta utilizado. 
+La descarga de operaciones se llevará a cabo mediante la generación de 
+un archivo intermedio XML que posteriormente será transmitido del punto de 
+venta al SC. Este archivo incluirá la siguiente información: 
+ Fecha de la extracción. 
+ Usuario que la ha realizado. 
+ Número de operaciones realizadas. 
+ Terminal de punto de venta utilizado. 
 Además, por cada una de las operaciones realizadas: 
- Nodo de salida. 
- Nodo de llegada. 
- Fecha y hora. 
- Precio 
- Código de tarifa. 
- Código de descuento (si aplicable) 
+ Nodo de salida. 
+ Nodo de llegada. 
+ Fecha y hora. 
+ Precio 
+ Código de tarifa. 
+ Código de descuento (si aplicable)  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+11 
 3.1.3.2 Interfaz de usuarios. 
-La actualización de usuarios se llevará a cabo mediante la importación de un archivo intermedio 
-XML del SC al dispositivo de venta mediante la conexión USB. V-Usr incluirá la siguiente 
-información: 
- Fecha de la creación del archivo. 
- Número de registros incluidos. 
+La actualización de usuarios se llevará a cabo mediante la importación 
+de un archivo intermedio XML del SC al dispositivo de venta mediante la 
+conexión Wi-Fi. V-Usr incluirá la siguiente información: 
+ Fecha de la creación del archivo. 
+ Número de registros incluidos. 
 Además, por cada una de las entradas: 
- Código de usuario 
- Nombre de usuario 
- Contraseña. 
+ Código de usuario 
+ Nombre de usuario 
+ Contraseña. 
 3.1.3.3 Interfaz de tarifas. 
-La actualización de tarifas se llevará a cabo mediante la importación de un archivo intermedio XML 
-del SC al dispositivo de venta mediante la conexión USB. La generación de dicho archivo xml queda 
-fuera del alcance de VIRUTA. V-Trf incluirá la siguiente información: 
- Fecha de la creación del archivo. 
- Versión de la información de tarifas. 
- Número de registros incluidos. 
+La actualización de tarifas se llevará a cabo mediante la importación de 
+un archivo intermedio XML del SC al dispositivo de venta mediante la conexión 
+Wi-Fi. La generación de dicho archivo XML queda fuera del alcance de VIRUTA2. 
+V-Trf incluirá la siguiente información: 
+ Fecha de la creación del archivo. 
+ Versión de la información de tarifas. 
+ Número de registros incluidos. 
 Además, por cada una de las entradas: 
- Código de tarifa 
- Nodo de salida 
- Nodo de llegada. 
- Horario {día, noche, fin de semana} 
- Precio Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
+ Código de tarifa 
+ Nodo de salida 
+ Nodo de llegada. 
+ Horario {día, noche, fin de semana} 
+ Precio 
 3.1.3.4 Interfaz de descuentos. 
-La actualización de tarifas se llevará a cabo mediante la importación de un archivo intermedio XML 
-del SC al dispositivo de venta mediante la conexión USB. La generación de dicho archivo xml queda 
-fuera del alcance de VIRUTA. V-Dsc incluirá la siguiente información: 
- Fecha de la creación del archivo. 
- Versión de la información de descuentos.. 
- Número de registros incluidos. 
+La actualización de tarifas se llevará a cabo mediante la importación de 
+un archivo intermedio XML del SC al dispositivo de venta mediante la conexión 
+Wi-Fi. La generación de dicho archivo XML queda fuera del alcance de VIRUTA. 
+V-Dsc incluirá la siguiente información:  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+12 
+ Fecha de la creación del archivo. 
+ Versión de la información de descuentos. 
+ Número de registros incluidos. 
 Además, por cada una de las entradas: 
- Código de descuento 
- Tipo de descuento { 3ª Edad, Veterano de guerra, familia numerosa, estudiante} 
- Descuento, medido en porcentaje (5, 10, 15, etc). 
+ Código de descuento 
+ Tipo de descuento { 3ª Edad, Veterano de guerra, familia 
+numerosa, estudiante} 
+ Descuento, medido en porcentaje (5, 10, 15, etc). 
 3.1.3.4 Interfaz de red ferroviaria. 
-La actualización de red ferroviaria se llevará a cabo mediante la importación de un archivo 
-intermedio XML del SC al dispositivo de venta mediante la conexión USB. La generación de dicho 
-archivo xml queda fuera del alcance de VIRUTA. V-Red incluirá la siguiente información: 
- Fecha de la creación del archivo. 
- Versión de la información de red. 
- Número de registros incluidos. 
+La actualización de red ferroviaria se llevará a cabo mediante la 
+importación de un archivo intermedio XML del SC al dispositivo de venta 
+mediante la conexión Wi-Fi. La generación de dicho archivo XML queda fuera 
+del alcance de VIRUTA. V-Red incluirá la siguiente información: 
+ Fecha de la creación del archivo. 
+ Versión de la información de red. 
+ Número de registros incluidos. 
 Además, por cada una de las entradas: 
- Código de línea 
- Nombre de la línea. 
- Lista con los nodos de la línea. 
+ Código de línea 
+ Nombre de la línea. 
+ Lista con los nodos de la línea. 
 3.1.3.6 Interfaz a la base de datos 
- 
-Viruta hará uso de una base de datos relacional para persistir la información. Dicha base de datos 
-estará integrada dentro de la aplicación, por lo que no se considerará como sistema externo. Para 
-ver los detalles de la base de datos integrada, ir a la sección 3.6 de este documento. 
+Viruta hará uso de una base de datos relacional para persistir la 
+información. Dicha base de datos estará integrada dentro de la aplicación, por 
+lo que no se considerará como sistema externo. Para ver los detalles de la base 
+de datos integrada, ir a la sección 3.6 de este documento. 
 3.1.4. Interfaces de comunicaciones 
-Viruta no hará uso en su versión actual de ningún protocolo de red. Se conectará exclusivamente al 
-SC mediante el puerto USB del TPV. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
-3.2. Requisitos funcionales 
+VIRUTA2 hará uso del protocolo de red TCP/IP Móvil para comunicarse 
+con el SC. Además se comunicará con el servidor de cobro por tarjeta en caso 
+de realizarse el pago de esta forma. 
+3.2. Requisitos funcionales  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+13 
 3.2.1 Autenticación de usuario 
 3.2.1.1. Autenticación de usuario 
- Prioridad: Media. 
- Estabilidad: Alta. 
- Descripción: Identifica al usuario respecto al sistema. 
- Entrada: Nombre de usuario y contraseña. 
- Salida: Mensaje informativo. 
- Origen: Usuario. 
- Destino: VIRUTA. 
- Necesita: Nada. 
- Acción: El usuario deberá ser capaz de introducir su nombre de usuario y contraseña. El 
-usuario deberá recibir un mensaje de error en caso de que la autenticación no haya sido 
-exitosa. 
- Precondición: El usuario debe existir en el registro de usuarios del sistema. 
- Poscondicion: El usuario queda identificado respecto al sistema, pudiendo operarlo. 
- Efectos laterales: - 
+ Prioridad: Media. 
+ Estabilidad: Alta. 
+ Descripción: Identifica al usuario respecto al sistema. 
+ Entrada: Nombre de usuario y contraseña. 
+ Salida: Mensaje informativo. 
+ Origen: Usuario. 
+ Destino: VIRUTA2. 
+ Necesita: Nada. 
+ Acción: El usuario deberá ser capaz de introducir su nombre de 
+usuario y contraseña. El usuario deberá recibir un mensaje de error en caso de 
+que la autenticación no haya sido exitosa. 
+ Precondición: El usuario debe existir en el registro de usuarios 
+del sistema. 
+ Poscondicion: El usuario queda identificado respecto al sistema, 
+pudiendo operarlo. 
+ Efectos laterales: VIRUTA2 inicia automáticamente la descarga 
+de operaciones y la actualización de tarifas, descuentos, usuarios y red 
+ferroviaria. 
 3.2.2 Venta de billetes 
 3.2.2.1. Venta de billete 
- Prioridad: Alta. 
- Estabilidad: Alta. 
- Descripción: Venta de un billete a un viajero. 
- Entrada: Estación de destino y de salida. Descuento aplicable. Confirmación de venta. 
- Salida: Mensaje informativo. 
- Origen: Usuario. 
- Destino: VIRUTA. 
- Necesita: Nada. 
- Acción: El usuario deberá ser capaz de seleccionar los nodos del trayecto de una lista y de 
-elegir un posible descuento. VIRUTA seleccionará automáticamente la tarifa e introducirá 
-fecha y hora. También deberá ser capaz de ver un resumen de los datos del billete (trayecto, 
-tarifa, descuento, fecha y hora) antes de confirmar la compra. El usuario deberá recibir un 
-mensaje confirmando que la operación se ha llevado a cabo satisfactoriamente. 
- Precondición: El usuario debe existir en la base de datos del sistema, así como los nodos, 
-tarifas y descuentos. 
- Poscondicion: El sistema registra la venta a nombre del usuario que la ha realizado. 
- Efectos laterales: Viruta imprime el billete y un justificante. 
-3.2.2.2. Impresión del billete 
- Prioridad: Media. 
- Estabilidad: Alta. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
- Descripción: Impresión del billete para el viajero. 
- Entrada: - 
- Salida: Billete impreso 
- Origen: VIRUTA. 
- Destino: usuario 
- Necesita: venta confirmada. 
- Acción: VIRUTA imprime un billete para cada uno de los trayectos reflejados en la venta. 
-Cada uno de estos billetes contendrá información sobre la estación de salida, la de llegada, 
-la fecha y hora, así como la tarifa y el descuento aplicados. 
- Precondición: Venta existente en el sistema. 
- Poscondicion: - 
- Efectos laterales: - 
-3.2.2.3 Impresión justificante 
- Prioridad: Baja. 
- Estabilidad: Alta. 
- Descripción: Impresión del justificante de la venta. 
- Entrada: - 
- Salida: Justificante impreso 
- Origen: VIRUTA. 
- Destino: usuario 
- Necesita: venta confirmada. 
- Acción: VIRUTA imprime un único justificante por cada compra. 
- Precondición: Venta existente en el sistema. 
- Poscondicion: - 
- Efectos laterales: - 
+ Prioridad: Alta. 
+ Estabilidad: Alta. 
+ Descripción: Venta de un billete a un viajero. 
+ Entrada: Estación de destino y de salida. Descuento aplicable. 
+Método de pago. Confirmación de venta. 
+ Salida: Mensaje informativo. 
+ Origen: Usuario.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+14 
+ Destino: VIRUTA2. 
+ Necesita: Nada. 
+ Acción: El usuario deberá ser capaz de seleccionar los nodos del 
+trayecto de una lista y de elegir un posible descuento. VIRUTA2 seleccionará 
+automáticamente la tarifa e introducirá fecha y hora. También deberá ser capaz 
+de ver un resumen de los datos del billete (trayecto, tarifa, descuento, fecha y 
+hora) antes de confirmar la compra. El usuario deberá seleccionar el método de 
+pago elegido: en efectivo o con tarjeta. El usuario deberá recibir un mensaje 
+confirmando que la operación se ha llevado a cabo satisfactoriamente. 
+ Precondición: El usuario debe existir en la base de datos del 
+sistema, así como los nodos, tarifas y descuentos. 
+ Poscondicion: El sistema registra la venta a nombre del usuario 
+que la ha realizado. 
+ Efectos laterales: En caso de pago en efectivo VIRUTA2 imprime 
+el billete y un justificante, en cado de pago con tarjeta VIRUTA2 solicita la 
+introducción de los datos de la tarjeta. 
+3.2.2.2. Pago con tarjeta: introducción de datos 
+ Prioridad: Baja. 
+ Estabilidad: Alta. 
+ Descripción: Introducción de los datos para el pago del importe 
+del billete utilizando una tarjeta. 
+ Entrada: Lectura de la tarjeta a través del lector de tarjetas. 
+Código de seguridad. 
+ Salida: Mensaje informativo. 
+ Origen: Usuario. 
+ Destino: VIRUTA2. 
+ Necesita: Venta confirmada. 
+ Acción: El usuario deberá leer la tarjeta del cliente y permitir que 
+éste introduzca su código de seguridad.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+15 
+ Precondición: Venta existente en el sistema y método de pago 
+elegido: con tarjeta. 
+ Poscondicion: El sistema almacena temporalmente los datos de 
+la tarjeta y el código de seguridad para enviarlos al servicio de cobros. 
+ Efectos laterales: VIRUTA2 envía los datos de la tarjeta al servicio 
+de cobros correspondiente. 
+3.2.2.3. Pago con tarjeta: envío de datos 
+ Prioridad: Baja. 
+ Estabilidad: Alta. 
+ Descripción: Envío de los datos para el pago del importe del 
+billete utilizando una tarjeta. 
+ Entrada: - 
+ Salida: Archivo de datos de tarjeta e importe. 
+ Origen: VIRUTA2. 
+ Destino: Sistema de cobro correspondiente. 
+ Necesita: Datos de tarjeta introducidos. 
+ Acción: VIRUTA2 enviará los datos de la tarjeta junto con el 
+importe. El sistema enviará un mensaje informando si el cobro se ha realizado 
+satisfactoriamente o no. 
+ Precondición: Venta existente en el sistema y método de pago 
+elegido: con tarjeta. 
+ Poscondicion: El sistema muestra un mensaje informando sí el 
+cobro ha sido posible o no. 
+ Efectos laterales: - 
+3.2.2.4. Impresión del billete 
+ Prioridad: Media. 
+ Estabilidad: Alta. 
+ Descripción: Impresión del billete para el viajero. 
+ Entrada: - 
+ Salida: Billete impreso  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+16 
+ Origen: VIRUTA2. 
+ Destino: usuario 
+ Necesita: venta confirmada y pagada. 
+ Acción: VIRUTA2 imprime un billete para cada uno de los 
+trayectos reflejados en la venta. Cada uno de estos billetes contendrá 
+información sobre la estación de salida, la de llegada, la fecha y hora, así como 
+la tarifa y el descuento aplicados. 
+ Precondición: Venta existente en el sistema. 
+ Poscondicion: - 
+ Efectos laterales: - 
+3.2.2.5 Impresión justificante 
+ Prioridad: Baja. 
+ Estabilidad: Alta. 
+ Descripción: Impresión del justificante de la venta. 
+ Entrada: - 
+ Salida: Justificante impreso 
+ Origen: VIRUTA2. 
+ Destino: usuario 
+ Necesita: venta confirmada y pagada. 
+ Acción: VIRUTA imprime un único justificante por cada compra. 
+ Precondición: Venta existente en el sistema. 
+ Poscondicion: - 
+ Efectos laterales: - 
 3.2.3 Descarga de operaciones. 
 3.2.3.1. Descarga de operaciones 
- Prioridad: Media. 
- Estabilidad: Media. 
- Descripción: Descarga de las operaciones diarias realizadas por el revisor. 
- Entrada: Solicitud de descarga de operaciones. 
- Salida: Archivo V-Ops. 
- Origen: VIRUTA. 
- Destino: Sistema Central. 
- Necesita: Registro de ventas. 
- Acción: El sistema genera un archivo intermedio V-Ops con todas las operaciones llevadas a 
-cabo por el usuario desde la última extracción y lo transmite al directorio de destino del SC. 
- Precondición: El usuario debe estar autenticado en el sistema. El TPV debe estar conectado 
-físicamente al SC. 
- Poscondicion: VIRUTA marca las operaciones como extraídas. 
- Efectos laterales: El SC procesa el archivo V-Ops. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
+ Prioridad: Media. 
+ Estabilidad: Media. 
+ Descripción: Descarga de las operaciones diarias realizadas por el 
+revisor.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+17 
+ Entrada: Solicitud de descarga de operaciones. 
+ Salida: Archivo V-Ops. 
+ Origen: VIRUTA2. 
+ Destino: Sistema Central. 
+ Necesita: Registro de ventas. 
+ Acción: El sistema genera un archivo intermedio V-Ops con todas 
+las operaciones llevadas a cabo por el usuario desde la última extracción y lo 
+transmite al directorio de destino del SC. 
+ Precondición: El usuario debe estar autenticado en el sistema. 
+ Poscondicion: VIRUTA2 marca las operaciones como extraídas. 
+ Efectos laterales: El SC procesa el archivo V-Ops. 
 3.2.4 Actualización del sistema 
 3.2.4.1. Actualizar tarifas 
- Prioridad: Media. 
- Estabilidad: Media. 
- Descripción: Actualiza las tarifas del sistema. 
- Entrada: Archivo V-Trf. 
- Salida: Mensaje de confirmación o error. 
- Origen: SC. 
- Destino: VIRUTA. 
- Necesita: Archivo V-Trf, registro de tarifas de VIRUTA. 
- Acción: El sistema importa el archivo V-Trf del sistema central y carga la información en el 
-registro de tarifas de VIRUTA. 
- Precondición: El usuario debe estar autenticado en el sistema. El TPV debe estar conectado 
-físicamente al SC. 
- Poscondicion: VIRUTA queda actualizado con la información de tarifas. Las antiguas tarifas 
-son eliminadas. 
- Efectos laterales: -. 
+ Prioridad: Media. 
+ Estabilidad: Media. 
+ Descripción: Actualiza las tarifas del sistema. 
+ Entrada: Archivo V-Trf. 
+ Salida: Mensaje de confirmación o error. 
+ Origen: SC. 
+ Destino: VIRUTA2. 
+ Necesita: Archivo V-Trf, registro de tarifas de VIRUTA2. 
+ Acción: El sistema importa el archivo V-Trf del sistema central y 
+carga la información en el registro de tarifas de VIRUTA2. 
+ Precondición: El usuario debe estar autenticado en el sistema 
+ Poscondicion: VIRUTA2 queda actualizado con la información de 
+tarifas. Las antiguas tarifas son eliminadas. 
+ Efectos laterales: -. 
 3.2.4.2. Actualizar descuentos 
- Prioridad: Media. 
- Estabilidad: Media. 
- Descripción: Actualiza la información de descuentos del sistema. 
- Entrada: Archivo V-Dsc. 
- Salida: Mensaje de confirmación o error. 
- Origen: SC. 
- Destino: VIRUTA. 
- Necesita: Archivo V-Dsc, registro de descuentos de VIRUTA. 
- Acción: El sistema importa el archivo V-Dsc del sistema central y carga la información en el 
-registro de descuentos de VIRUTA. 
- Precondición: El usuario debe estar autenticado en el sistema. El TPV debe estar conectado 
-físicamente al SC. 
- Poscondicion: VIRUTA queda actualizado con la información de descuentos. Los antiguos 
-descuentos son eliminados. 
- Efectos laterales: -. 
+ Prioridad: Media.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+18 
+ Estabilidad: Media. 
+ Descripción: Actualiza la información de descuentos del sistema. 
+ Entrada: Archivo V-Dsc. 
+ Salida: Mensaje de confirmación o error. 
+ Origen: SC. 
+ Destino: VIRUTA2. 
+ Necesita: Archivo V-Dsc, registro de descuentos de VIRUTA2. 
+ Acción: El sistema importa el archivo V-Dsc del sistema central y 
+carga la información en el registro de descuentos de VIRUTA. 
+ Precondición: El usuario debe estar autenticado en el sistema. 
+ Poscondicion: VIRUTA2 queda actualizado con la información de 
+descuentos. Los antiguos descuentos son eliminados. 
+ Efectos laterales: -. 
 3.2.4.3. Actualizar usuarios 
- Prioridad: Baja. 
- Estabilidad: Media. 
- Descripción: Actualiza la información de usuarios del sistema. 
- Entrada: Archivo V-Usr. 
- Salida: Mensaje de confirmación o error. 
- Origen: SC. 
- Destino: VIRUTA. Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
- Necesita: Archivo V-Usr, registro de usuarios de VIRUTA. 
- Acción: El sistema importa el archivo V-Usr del sistema central y carga la información en el 
-registro de usuarios de VIRUTA. 
- Precondición: El usuario debe estar autenticado en el sistema. El TPV debe estar conectado 
-físicamente al SC. 
- Poscondicion: VIRUTA queda actualizado con la información de descuentos. Los antiguos 
-usuarios son eliminados. 
- Efectos laterales: -. 
-3.2.4.3. Actualizar red ferroviaria 
- Prioridad: Baja. 
- Estabilidad: Baja. 
- Descripción: Actualiza la información de red ferroviaria. 
- Entrada: Archivo V-Red. 
- Salida: Mensaje de confirmación o error. 
- Origen: SC. 
- Destino: VIRUTA. 
- Necesita: Archivo V-Red, registro de red ferroviaria de VIRUTA. 
- Acción: El sistema importa el archivo V-Red del sistema central y carga la información en el 
-registro de nodos de VIRUTA. 
- Precondición: El usuario debe estar autenticado en el sistema. El TPV debe estar conectado 
-físicamente al SC. 
- Poscondicion: VIRUTA queda actualizado con la información de red ferroviaria. Los antiguos 
-nodos son eliminados. 
- Efectos laterales: - 
+ Prioridad: Baja. 
+ Estabilidad: Media. 
+ Descripción: Actualiza la información de usuarios del sistema. 
+ Entrada: Archivo V-Usr. 
+ Salida: Mensaje de confirmación o error. 
+ Origen: SC. 
+ Destino: VIRUTA2. 
+ Necesita: Archivo V-Usr, registro de usuarios de VIRUTA2. 
+ Acción: El sistema importa el archivo V-Usr del sistema central y 
+carga la información en el registro de usuarios de VIRUTA2. 
+ Precondición: El usuario debe estar autenticado en el sistema 
+ Poscondicion: VIRUTA2 queda actualizado con la información de 
+descuentos. Los antiguos usuarios son eliminados. 
+ Efectos laterales: - 
+3.2.4.4. Actualizar red ferroviaria 
+ Prioridad: Baja.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+19 
+ Estabilidad: Baja. 
+ Descripción: Actualiza la información de red ferroviaria. 
+ Entrada: Archivo V-Red. 
+ Salida: Mensaje de confirmación o error. 
+ Origen: SC. 
+ Destino: VIRUTA2. 
+ Necesita: Archivo V-Red, registro de red ferroviaria de VIRUTA2. 
+ Acción: El sistema importa el archivo V-Red del sistema central y 
+carga la información en el registro de nodos de VIRUTA2. 
+ Precondición: El usuario debe estar autenticado en el sistema 
+ Poscondicion: VIRUTA2 queda actualizado con la información de 
+red ferroviaria. Los antiguos nodos son eliminados. 
+ Efectos laterales: - 
 3.3. Restricciones de rendimiento 
-TRANSFER estima que un revisor deberá procesar alrededor de 200 operaciones por jornada laboral 
-del revisor (8 horas). 
-Por las características del sistema, no habrá accesos múltiples al sistema, es decir, dos usuarios 
-operando la misma instancia al mismo tiempo. 
- 
-VIRUTA deberá cumplir las siguientes restricciones de rendimientos: 
- 
+TRANSFER estima que un revisor deberá procesar alrededor de 200 
+operaciones por jornada laboral del revisor (8 horas). 
+Por las características del sistema, no habrá accesos múltiples al sistema, es 
+decir, dos usuarios operando la misma instancia al mismo tiempo. 
+VIRUTA2 deberá cumplir las siguientes restricciones de rendimientos: 
 1. La confirmación de venta no deberá tardar más de 5 segundos. 
 2. El proceso de impresión de un billete no deberá tardar más de 15 segundos. 
-3. La descarga de operaciones no deberá tardar más de 45 segundos (entendiendo que se 
-descargan exclusivamente las operaciones realizadas durante la última sesión). 
+3. La descarga de operaciones no deberá tardar más de 45 segundos 
+(entendiendo que se descargan exclusivamente las operaciones realizadas durante la 
+última sesión). 
 4. La actualización del sistema no deberá tardar más de 120 segundos. 
- 
-Los archivos xml que se intercambiarán no “pesarán” más de 300k en ningún caso. 
- 
-Dadas las características de los terminales resumidas en la sección 2.3 de esta sección, VIRUTA 
-deberá ajustarse a las limitadas especificaciones de memoria y procesador de dichos terminales sin 
-que ello suponga una merma en las restricciones de rendimiento definidas más arriba. 
- Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014 
-Por último, VIRUTA debe ser eficiente energéticamente hablando, de tal forma que tenga un mínimo 
-de autonomía de 72 horas a un ritmo de 200 operaciones cada 8 horas. 
+Los archivos XML que se intercambiarán no “pesarán” más de 300k en ningún 
+caso. 
+Por último, VIRUTA2 debe ser eficiente energéticamente hablando, de tal 
+forma que tenga un mínimo de autonomía de 72 horas a un ritmo de 200 operaciones 
+cada 8 horas.  
+Documento ERS VIRUTA2 
+Daniel Duque Maroto (GIS+GII) – Jesús Miranda Blanco (GIS+GII) – Óscar Miranda Bravo (GIS) - 
+Daniel Villaverde Martín (GIS+GII) 
+20 
 3.4. Restricciones de diseño 
-No hay restricciones de diseño más allá de las inherentes al resto de restricciones incluidas en este 
-documento. 
+Se deberá seguir la guía de diseño proporcionada por Apple para el desarrollo 
+en sus dispositivos. 
 3.5 Atributos del sistema 
-El sistema no tiene grandes restricciones de rendimiento ya que no se espera una gran carga de 
-trabajo. Sin embargo, si que se exige que cumpla las siguientes características: 
+El sistema no tiene grandes restricciones de rendimiento ya que no se espera 
+una gran carga de trabajo. Sin embargo, sí que se exige que cumpla las siguientes 
+características: 
 3.5.1 Seguridad 
 La información de password de cada usuario estará encriptada. 
 3.5.2 Portabilidad 
-Aunque el sistema empezará corriendo en los TPVs MOTOROLA XSL 6000, estos serán remplazados 
-progresivamente por el modelo superior XSL 9000. VIRUTA deberá ser capaz de funcionar con los 
-mismos requisitos en ambos terminales. 
+El sistema deberá ser portable a cualquier dispositivo tipo IPad. 
 3.5.3 Fiabilidad 
-El sistema deberá ser fiable a la hora de calcular la aplicación de tarifas y descuentos, con un grado 
-de precisión de no menos de dos decimales. 
+El sistema deberá ser fiable a la hora de calcular la aplicación de tarifas y 
+descuentos, con un grado de precisión de no menos de dos decimales. 
 3.6 Requisitos de base de datos lógica. 
-Cada entrada de las bases de datos está caracterizada por un código numérico, que se obtiene 
-cuando da de alta dicho elemento en la base de datos por primera vez. El acceso a la base de datos 
-se realizará mediante este código. 
- 
-La base de datos lógica del sistema debe representar el siguiente modelo del dominio, incluyendo 
-las restricciones y relaciones que en él se muestran: Especificación de Requisitos Software VIRUTA 
-9-9-2013 
- 
-Práctica de Control de Cambios Asignatura Evolución y Adaptación del Software 
-Grado de Ingeniería del Software Curso 2013/2014
+Cada entrada de las bases de datos está caracterizada por un código 
+numérico, que se obtiene cuando da de alta dicho elemento en la base de datos 
+por primera vez. El acceso a la base de datos se realizará mediante este código. 
+La base de datos lógica del sistema debe representar el siguiente 
+modelo del dominio, incluyendo las restricciones y relaciones que en él se 
+muestran: 
+Todos los datos serán alfanuméricos, sin embargo, el password deberá 
+almacenarse de forma encriptada. 
+En términos de rendimiento, la base de datos debe alinearse con los 
+requisitos de rendimiento de VIRUTA enunciados en la sección 3.3.
